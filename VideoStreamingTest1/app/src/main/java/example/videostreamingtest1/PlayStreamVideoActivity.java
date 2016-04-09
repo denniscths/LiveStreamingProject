@@ -2,9 +2,9 @@ package example.videostreamingtest1;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.TextView;
 
 import io.vov.vitamio.LibsChecker;
-import io.vov.vitamio.widget.MediaController;
 import io.vov.vitamio.widget.VideoView;
 
 public class PlayStreamVideoActivity extends AppCompatActivity {
@@ -14,6 +14,7 @@ public class PlayStreamVideoActivity extends AppCompatActivity {
     //private HashMap<String, String> options;
     private VideoView mVideoView;
 
+    TextView txtHostName, txtIPAddr, txtRoomName, txtRoomStreamTitle, txtRoomStreamText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +32,18 @@ public class PlayStreamVideoActivity extends AppCompatActivity {
 //        Intent intent = getIntent();
         String ipaddr = "rtsp://" + post.ipaddr + ":1935/"+ post.post_title + "/myStream";
 
+        txtHostName = (TextView) findViewById(R.id.txtHostName);
+        txtIPAddr = (TextView) findViewById(R.id.txtIPAddr);
+        txtRoomName = (TextView) findViewById(R.id.txtRoomName);
+        txtRoomStreamTitle = (TextView) findViewById(R.id.txtRoomStreamTitle);
+        txtRoomStreamText = (TextView) findViewById(R.id.txtRoomStreamText);
+
+        txtHostName.setText(post.post_text);
+        txtIPAddr.setText(post.ipaddr);
+        txtRoomName.setText(post.post_title);
+        txtRoomStreamTitle.setText(post.stream_title);
+        txtRoomStreamText.setText(post.stream_text);
+
         path = ipaddr;
         /*options = new HashMap<>();
         options.put("rtmp_playpath", "");
@@ -43,10 +56,10 @@ mVideoView.getAudioTrack();
         mVideoView.start();
 
         //Media Controller
-        mVideoView.setMediaController(new MediaController(this));
+//        mVideoView.setMediaController(new MediaController(this));
 //        mVideoView.requestFocus();
 
-
+        mVideoView.setBufferSize(1000);
 //        mVideoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
 //            @Override
 //            public void onPrepared(MediaPlayer mediaPlayer) {

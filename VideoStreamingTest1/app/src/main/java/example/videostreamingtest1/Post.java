@@ -17,5 +17,13 @@ public class Post implements Serializable {
     @SerializedName("addr")
     public String ipaddr;
 
+    @SerializedName("image_url")
+    public String image_url;
+
+    @SerializedName("stream_title")
+    public String stream_title;
+
+    @SerializedName("stream_text")
+    public String stream_text;
 
 }

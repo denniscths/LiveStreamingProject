@@ -17,28 +17,22 @@
         android:id="@+id/btnStream"
         android:nestedScrollingEnabled="true"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="104dp" />
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/etIPAddr"
-        android:text="192.168.1.103"
+        android:text="192.168.1.10"
         android:nestedScrollingEnabled="true"
         android:layout_below="@+id/textView2"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Live Streaming"
-        android:id="@+id/textView"
-        android:textSize="40dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignParentStart="true"
+        android:phoneNumber="false"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:inputType="number"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -46,8 +40,6 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Server Address"
         android:id="@+id/textView2"
-        android:layout_marginTop="40dp"
-        android:layout_below="@+id/textView"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -55,9 +47,66 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/etName"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:hint="Your name" />
+        android:hint="Your name"
+        android:layout_below="@+id/etIPAddr"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Take Picture"
+        android:id="@+id/btnTakePic"
+        android:layout_below="@+id/etName"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toLeftOf="@+id/btnChooseGallery"
+        android:layout_toStartOf="@+id/btnChooseGallery" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Choose From Gallery"
+        android:id="@+id/btnChooseGallery"
+        android:layout_alignTop="@+id/btnTakePic"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/etStreamTitle"
+        android:hint="Stream Title"
+        android:layout_above="@+id/etStreamText"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/etStreamText"
+        android:hint="Stream Text"
+        android:layout_above="@+id/etUploadImageName"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/etUploadImageName"
+        android:hint="Image name"
+        android:layout_above="@+id/btnStream"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/imageView"
+        android:layout_below="@+id/btnTakePic"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_above="@+id/etStreamTitle" />
 
 
 </RelativeLayout>
